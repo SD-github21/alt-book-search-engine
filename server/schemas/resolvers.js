@@ -15,7 +15,7 @@ const resolvers = {
             }
 
         throw new AuthenticationError('Not  Logged in');
-        
+
         }
     },
 
@@ -42,7 +42,34 @@ const resolvers = {
 
             const token = signToken(user);
             return { token,user };
-        }
+        },
+        saveBook: async (parent, {BookData}, context) => {
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { savedBooks: BookData } },
+                    { new: true, runValidators: true }
+                );
+                
+                return updatedUser;
+            }
+            
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeBook: async (parent, {bookId}, context) => {
+            if (context.user) {
+            const updatedUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { savedBooks: { bookId: bookId } } },
+                    { new: true }
+                );
+
+                return updatedUser;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+
+        }      
 
     }
 };
