@@ -50,7 +50,6 @@ const resolvers = {
                     { $push: { savedBooks: input } },
                     { new: true}
                 );
-                console.log(updatedUser);
                 return updatedUser;
             }
             
