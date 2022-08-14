@@ -3,7 +3,7 @@
 # **Alternative Book Search Engine**
 
 ## **Description**
-The purpose of this project was to take a fully functional MERN stack application that was built in React with a RESTful API and to refactor it to use a GraphQL API built with an Apollo Server. This application is a book search engine website that allows users to search for books using the Google Books API and then save and delete selected books of interest.  
+The purpose of this project was to take a fully functional MERN stack application that was built in React with a RESTful API and to refactor it to use a GraphQL API built with an Apollo Server. This application is a book search engine website that allows users to search for books using the Google Books API and then save and delete selected books of interest within their user account.  
 
 ## **Table of Contents**
 [User Story](#user-story)<br>
