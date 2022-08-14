@@ -10,6 +10,7 @@ import Auth from '../utils/auth';
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+    // Wrap the LOGIN_USER in a JS function addUser for usage in the component
   const [login, { error }] = useMutation(LOGIN_USER);
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -32,6 +33,7 @@ const LoginForm = () => {
 
     // Submit form
     try {
+      // Execute addUser mutation and pass in variable data from form
       const { data } = await login({
         variables: { ...userFormData}
       });

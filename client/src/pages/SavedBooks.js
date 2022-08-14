@@ -11,11 +11,11 @@ import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
 
-  // Run the me query and set the data to a variable named userData that can be used in the return below
+  // Run the me query and set the data to a variable named userData that can be used below
   const { loading, data} = useQuery(GET_ME);
   const userData = data?.me || {};
 
-  // Set the removeBook functionality up so that the user can remove a book
+  // Destructure the removeBook function from the mutation so that the user can remove a book
   const [removeBook] = useMutation(REMOVE_BOOK);
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
@@ -68,6 +68,7 @@ const SavedBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
+                  <Card.Link><a href={book.link} target="_blank" rel="noopener noreferrer">Click here to view on the Google Books website!</a></Card.Link>
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                     Delete this Book!
                   </Button>
