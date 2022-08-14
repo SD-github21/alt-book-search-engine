@@ -54,7 +54,7 @@ This project is covered under the following license: ISC<br>
 https://opensource.org/licenses/ISC
 
 ### **Contributing**
-Special thanks to Scott Heier for assisting with code designed to allow pages to re-render with an updated book array after saving and deleting books (e.g., forceRefresh={true} for the Router tag and adding window.location.reload() to the handleDeleteBook function).
+Special thanks to Scott Heier for his assistance in trouble-shooting some challenges that were encountered during the process of building this application.
 
 ### **Built With**
 * React 
